@@ -85,14 +85,17 @@
         to { transform: rotate(360deg); }
       }
     </style>
-  <script type="importmap">
+    
+    <!-- Import Map to handle module resolution -->
+    <script type="importmap">
 {
   "imports": {
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.32.0",
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.292.0",
+    "@google/genai": "https://esm.sh/@google/genai?bundle",
     "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1"
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/"
   }
 }
 </script>
@@ -104,10 +107,10 @@
     <div id="root"></div>
 
     <script type="text/babel" data-presets="react,typescript" data-type="module">
-      import React, { useState, useEffect, useRef } from 'https://esm.sh/react@18.2.0';
-      import ReactDOM from 'https://esm.sh/react-dom@18.2.0/client';
-      import { Menu, X, Phone, ShieldCheck, Droplets, Sparkles, Check, MessageCircle, Send, Bot, Smartphone, Camera, CalendarCheck, MapPin, Instagram, ArrowDown } from 'https://esm.sh/lucide-react@0.292.0';
-      import { GoogleGenAI } from 'https://esm.sh/@google/genai@0.1.1';
+      import React, { useState, useEffect, useRef } from 'react';
+      import ReactDOM from 'react-dom/client';
+      import { Menu, X, Phone, ShieldCheck, Droplets, Sparkles, Check, MessageCircle, Send, Bot, Smartphone, Camera, CalendarCheck, MapPin, Instagram, ArrowDown } from 'lucide-react';
+      import { GoogleGenAI } from '@google/genai';
 
       // --- TYPES ---
       const SectionId = {
@@ -147,7 +150,7 @@
 
       const getConciergeResponse = async (userMessage) => {
         try {
-          const apiKey = window.process?.env?.API_KEY || ''; // Fallback
+          const apiKey = window.process?.env?.API_KEY || ''; 
           
           if (!apiKey) {
             console.warn("API Key missing. AI features disabled.");
