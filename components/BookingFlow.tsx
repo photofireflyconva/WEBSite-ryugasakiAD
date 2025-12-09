@@ -87,17 +87,16 @@ const BookingFlow: React.FC = () => {
                   <span className="font-bold text-white">Ryugasaki Auto Detailing</span>
                 </div>
                 <p className="pl-8 text-sm text-gray-400">
-                  茨城県龍ケ崎市<br/>
-                  (工務店敷地内の隠れ家ガレージ)<br/>
-                  ※詳しい住所はご予約確定後にお伝えします。
+                  茨城県龍ケ崎市北方町822-1<br/>
+                  (工務店敷地内の隠れ家ガレージ)<br/>。
                 </p>
               </div>
 
               <div>
                 <p className="font-bold text-white mb-2 text-sm">営業時間</p>
                 <p className="text-sm text-gray-400">
-                  10:00 - 20:00 (完全予約制)<br/>
-                  ※夜間施工対応可（傷の確認に最適です）
+                  9:00 - 18:00 (完全予約制)<br/>
+                  ※夜間施工は要相談
                 </p>
               </div>
 

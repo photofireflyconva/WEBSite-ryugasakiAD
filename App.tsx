@@ -5,7 +5,6 @@ import Concept from './components/Concept';
 import MenuSection from './components/MenuSection';
 import BookingFlow from './components/BookingFlow';
 import Footer from './components/Footer';
-import AiConsultant from './components/AiConsultant';
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
         <BookingFlow />
       </main>
       <Footer />
-      <AiConsultant />
     </div>
   );
 }
