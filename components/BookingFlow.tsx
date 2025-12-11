@@ -93,7 +93,7 @@ const BookingFlow: React.FC = () => {
                 </div>
                 <p className="pl-8 text-sm text-gray-400">
                   茨城県龍ケ崎市北方町822-1<br/>
-                  (工務店敷地内の隠れ家ガレージ)<br/>。
+                  (工務店敷地内の隠れ家ガレージ)<br/>
                 </p>
               </div>
 
@@ -108,7 +108,12 @@ const BookingFlow: React.FC = () => {
 
               <div className="pt-6 border-t border-gray-700">
                 <h4 className="text-brand-accent text-sm font-bold mb-3">Follow Us</h4>
-                <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                <a 
+                  href="https://www.instagram.com/ryugasaki_auto_detailing?igsh=ZndmeHBtOXhndGx4" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                >
                   <Instagram size={20} />
                   <span className="text-sm">@RYUGASAKI_AUTO_DETAILING</span>
                 </a>
