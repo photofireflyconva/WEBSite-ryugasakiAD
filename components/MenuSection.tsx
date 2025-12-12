@@ -6,8 +6,8 @@ const MENU_ITEMS: MenuItem[] = [
   // First Time / Reset
   {
     id: 'reset',
-    name: '徹底リセット洗車',
-    price: '¥12,000',
+    name: 'リセット洗車',
+    price: 'S14,300、M16,500、L18,700、LL22,000',
     description: 'ご新規様はここから。蓄積した汚れを全てリセットし、すっぴん状態へ。',
     category: 'new',
     duration: '120min',
@@ -17,7 +17,7 @@ const MENU_ITEMS: MenuItem[] = [
   {
     id: 'std-new',
     name: 'スタンダード純水洗車',
-    price: '¥5,000',
+    price: 'S4,800、M5,800、L6,800、LL7,800',
     description: '基本のメンテナンス洗車。',
     category: 'new',
     duration: '60min',
@@ -26,8 +26,8 @@ const MENU_ITEMS: MenuItem[] = [
   // Repeater
   {
     id: 'std-repeat',
-    name: 'スタンダード純水洗車',
-    price: '¥3,500',
+    name: 'リピーター純水洗車',
+    price: 'S3,500、M4,500、L5,500、LL6,500',
     description: '会員様限定プライス。定期的な維持管理に。',
     category: 'repeater',
     duration: '30-40min',
@@ -37,7 +37,7 @@ const MENU_ITEMS: MenuItem[] = [
   {
     id: 'repair',
     name: 'リペア (Repare)',
-    price: '¥9,000〜',
+    price: 'S8,800、M9,900、L11,300、LL12,700',
     description: '当店の主力メニュー。塗装を削らずに傷を埋め、ヌルテカの艶へ。',
     category: 'repeater',
     duration: '90min+',
@@ -48,7 +48,7 @@ const MENU_ITEMS: MenuItem[] = [
   {
     id: 'premium',
     name: 'プレミアム・リペア',
-    price: '¥22,000〜',
+    price: 'S19,800、M22,000、L25,300、LL29,700',
     description: '黒い車に深みを。より高度な充填技術。',
     category: 'premium',
     features: ['FZERO (黒ウレタン)', 'BP-MIX仕上げ', '圧倒的な黒味']
@@ -56,12 +56,36 @@ const MENU_ITEMS: MenuItem[] = [
   {
     id: 'flagship',
     name: 'フラグシップ・リペア',
-    price: '¥32,000〜',
+    price: 'S29,800、M32,000、L35,300、LL39,700',
     description: '究極の艶と保護。',
     category: 'premium',
     features: ['Essence施工', 'N°999F施工', '最高峰の艶']
   }
 ];
+
+const PriceDisplay = ({ price }: { price: string }) => {
+  // サイズ表記を含まない単純な価格の場合
+  if (!price.includes('S') && !price.includes('、')) {
+    return <div className="text-2xl font-serif text-brand-accent">{price}</div>;
+  }
+
+  // サイズ表記がある場合 (例: "S14,300、M16,500...")
+  const prices = price.split('、').map(p => {
+    const match = p.trim().match(/^([A-Z]+)(.*)$/);
+    return match ? { size: match[1], value: match[2] } : { size: '', value: p };
+  });
+
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-2 w-full">
+      {prices.map((p, idx) => (
+        <div key={idx} className="bg-slate-800/80 border border-slate-700/50 rounded p-2 flex flex-col items-center justify-center">
+          <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">{p.size}</span>
+          <span className="text-sm font-serif text-brand-accent">{p.value}</span>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 const MenuSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'new' | 'repeater'>('new');
@@ -106,8 +130,10 @@ const MenuSection: React.FC = () => {
             if (activeTab === 'new') return item.category === 'new';
             return item.category === 'repeater' || item.category === 'premium';
           }).map((item) => (
-            <div key={item.id} className="glass-panel rounded-xl p-8 hover:border-brand-accent/30 transition-all group">
-              <div className="flex justify-between items-start mb-4">
+            <div key={item.id} className="glass-panel rounded-xl p-8 hover:border-brand-accent/30 transition-all group flex flex-col h-full">
+              
+              {/* Header: Name & Tag */}
+              <div className="flex justify-between items-start mb-2">
                 <div>
                   {item.tag && (
                     <span className="inline-block px-2 py-1 bg-brand-gold text-brand-dark text-[10px] font-bold uppercase rounded mb-2">
@@ -118,18 +144,22 @@ const MenuSection: React.FC = () => {
                     {item.name}
                   </h3>
                 </div>
-                <div className="text-right">
-                  <div className="text-2xl font-serif text-brand-accent">{item.price}</div>
-                  {item.duration && <div className="text-xs text-gray-500">{item.duration}</div>}
-                </div>
+                {item.duration && <div className="text-xs text-gray-500 pt-1 whitespace-nowrap">{item.duration}</div>}
+              </div>
+
+              {/* Price Grid */}
+              <div className="mb-6">
+                 <PriceDisplay price={item.price} />
               </div>
               
-              <p className="text-gray-400 mb-6 min-h-[48px]">{item.description}</p>
+              {/* Description */}
+              <p className="text-gray-400 mb-6 flex-grow text-sm leading-relaxed">{item.description}</p>
               
-              <ul className="space-y-2">
+              {/* Features */}
+              <ul className="space-y-2 mt-auto">
                 {item.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center text-sm text-gray-300">
-                    <Check size={16} className="text-brand-accent mr-2" />
+                    <Check size={16} className="text-brand-accent mr-2 flex-shrink-0" />
                     {feature}
                   </li>
                 ))}
