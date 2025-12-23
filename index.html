@@ -322,9 +322,9 @@
           price: 'S14,300、M16,500、L18,700、LL22,000',
           description: 'ご新規様はここから。蓄積した汚れを全てリセットし、すっぴん状態へ。',
           category: 'new',
-          duration: '120min',
+          duration: '120min+',
           tag: '推奨',
-          features: ['アルカリプレウォッシュ', '酸性クリーナー(No.4/A06)', '油分除去', '高耐久トップコート', '純水洗車']
+          features: ['アルカリプレウォッシュ', '酸性クリーナー', '油分除去', '高耐久トップコート', '純水洗車']
         },
         {
           id: 'std-new',
@@ -333,42 +333,47 @@
           description: '基本のメンテナンス洗車。',
           category: 'new',
           duration: '60min',
+          tag: 'プログレードの洗車',
           features: ['アルカリプレウォッシュ', '酸性シャンプー', '純水仕上げ', '水垢除去トップコート']
         },
         {
           id: 'std-repeat',
-          name: 'リピーター純水洗車',
+          name: 'メンテナンス洗車',
           price: 'S3,500、M4,500、L5,500、LL6,500',
           description: '会員様限定プライス。定期的な維持管理に。',
           category: 'repeater',
           duration: '30-40min',
-          tag: '会員限定',
+          tag: 'リピーター限定',
           features: ['中性or酸性シャンプー', '純水仕上げ', '水垢除去トップコート']
         },
         {
           id: 'Gloss Filling',
           name: 'グロス・フィリング',
           price: 'S8,800、M9,900、L11,300、LL12,700',
-          description: '当店の主力メニュー。塗装を削らずに傷を埋め、ヌルテカの艶へ。',
+          description: '軽微な汚れや傷を埋め、ヌルテカの艶へ。',
           category: 'repeater',
           duration: '90min+',
-          tag: '人気No.1',
-          features: ['スタンダード純水洗車', 'RSE-1250施工', '魔手裏剣 x BASE', 'WAXベーストップコート仕上げ']
+          tag: '人気No.2',
+          features: ['スタンダード純水洗車', 'クリーナー兼傷埋め剤', 'WAXベーストップコート仕上げ']
         },
         {
           id: 'Deep Cleansing Repair',
           name: 'グロス・フィリング・リペア',
-          price: 'S19,800、M22,000、L25,300、LL29,700',
+          price: 'S29,800、M32,000、L35,300、LL39,700',
           description: '黒い車に深みを。より高度な充填技術。',
           category: 'premium',
-          features: ['FZERO (黒ウレタン)', '傷埋め高光沢トップコート仕上げ', '圧倒的な深い艶']
+          duration: '240min+',
+          tag: '人気No.1',
+          features: ['ディープ・クレンジング','専用傷埋めケミカル', '高光沢トップコート仕上げ', '圧倒的な深い艶']
         },
         {
           id: 'flagship Gloss armer',
           name: 'フラグシップ・グロスアーマー',
-          price: 'S29,800、M32,000、L35,300、LL39,700',
+          price: 'S39,800、M42,000、L45,300、LL49,700',
           description: '究極の艶と保護。',
           category: 'premium',
+          duration: '360min+',
+          tag: '当店最高峰',
           features: ['プライマー施工', 'ナノカーボンコーティング施工', '最高峰の艶']
         }
       ];
