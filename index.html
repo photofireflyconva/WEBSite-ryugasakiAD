@@ -140,12 +140,12 @@
       );
 
       const MENU_ITEMS = [
-        { id: 'wash-1', name: 'スタンダード純水洗車', price: 'S4,000、M5,000、L6,000、LL7,000', description: '基本のメンテナンス。純水でシミを作らず洗い上げます。', category: 'wash', tag: '基本', features: ['純水すすぎ', '手洗い', '簡易トップコート'] },
-        { id: 'wash-2', name: 'プレミアムディティール洗車', price: 'S6,000、M7,500、L9,000、LL10,500', description: '細部まで徹底的に。ホイール奥や隙間の汚れを除去。', category: 'wash', tag: 'おすすめ', features: ['細部洗浄', 'ホイール奥', '高耐久撥水'] },
-        { id: 'wash-3', name: 'リセットクレンジング洗車', price: 'S12,000、M14,000、L16,000、LL18,000', description: '水垢や油分を特殊ケミカルで分解除去。下地を整えます。', category: 'wash', tag: '徹底', features: ['スケール除去', '油分除去', '鉄粉除去'] },
-        { id: 'coat-1', name: 'グロスリペア・コーティング', price: 'S22,000、M25,000、L28,000、LL32,000', description: '特殊樹脂で微細な傷を埋め、驚異的な艶を復活させます。', category: 'coating', tag: '艶復活', features: ['傷埋めフィリング', '高光沢ポリマー'] },
-        { id: 'coat-2', name: 'セラミック・エナメルコート', price: 'S45,000、M50,000、L55,000、LL60,000', description: '本格的な保護。犠牲膜として塗装を強力に守ります。', category: 'coating', tag: '人気No.1', features: ['セラミック被膜', '硬化型トップ'] },
-        { id: 'coat-3', name: 'フラグシップ・アーマー', price: 'S60,000、M68,000、L76,000、LL85,000', description: '最高峰の保護と艶。当店の技術の粋を集めた究極の施工。', category: 'coating', tag: '最高峰', features: ['ナノカーボン', '超撥水', '多層施工'] }
+        { id: 'wash-1', name: 'スタンダード純水洗車', price: 'S4,000、M5,000、L6,000、LL7,000', description: '基本のメンテナンス。純水でシミを作らず洗い上げます。', category: 'wash', tag: '基本', features: ['純水すすぎ', '手洗い', '水垢除去トップコート'] },
+        { id: 'wash-2', name: 'プレミアムディティール洗車', price: 'S6,000、M7,500、L9,000、LL10,500', description: '細部まで徹底的に。隙間の汚れを除去。', category: 'wash', tag: 'おすすめ', features: ['細部洗浄', '鉄粉除去', '水垢除去トップコート'] },
+        { id: 'wash-3', name: 'リセットクレンジング洗車', price: 'S12,000、M14,000、L16,000、LL18,000', description: '水垢や油分を特殊ケミカルで分解除去。下地を整えます。', category: 'wash', tag: '徹底', features: ['スケール除去', '油分除去', '高耐久トップコート'] },
+        { id: 'coat-1', name: 'セラミックコート', price: 'S22,000、M25,000、L28,000、LL32,000', description: 'セラミックコート、犠牲膜として塗装を強力に守ります。', category: 'coating', tag: '艶復活', features: ['セラミック被膜', '1年耐久'] },
+        { id: 'coat-2', name: 'セラミック・エナメルコート', price: 'S45,000、M50,000、L55,000、LL60,000', description: '軽研磨プライマーによる傷埋め、セラミック被膜で驚異の艶を。', category: 'coating', tag: '人気No.1', features: ['セラミック被膜', '軽研磨プライマー'] },
+        { id: 'coat-3', name: 'フラグシップ・アーマー', price: 'S60,000、M68,000、L76,000、LL85,000', description: '最高峰の保護と艶。当店の技術の粋を集めた究極の施工。', category: 'coating', tag: '最高峰', features: ['ナノカーボン', '軽研磨プライマー', '多層施工'] }
       ];
 
       const PriceDisplay = ({ price }) => {
