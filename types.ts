@@ -3,7 +3,7 @@ export interface MenuItem {
   name: string;
   price: string;
   description: string;
-  category: 'new' | 'repeater' | 'premium';
+  category: 'wash' | 'coating';
   features: string[];
   duration?: string;
   tag?: string;
@@ -20,5 +20,4 @@ export enum SectionId {
   MENU = 'menu',
   GALLERY = 'gallery',
   FLOW = 'flow',
-  ACCESS = 'access',
 }
